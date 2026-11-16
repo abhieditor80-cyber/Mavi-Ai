@@ -1,0 +1,6 @@
+{
+  "name": "MAVI AI",
+  "description": "One AI. Unlimited Possibilities. MAVI AI is a Liquid Glass AI assistant dashboard for research, study, coding, planning, and creative workflows.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

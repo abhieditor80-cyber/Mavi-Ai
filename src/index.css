@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    --mavi-accent: #2563EB;
+    --mavi-accent-soft: rgba(37, 99, 235, 0.12);
+  }
+
+  html, body {
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+@keyframes mavi-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+.mavi-float {
+  animation: mavi-float 4.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mavi-float {
+    animation: none;
+  }
+}
+
+/* Liquid Glass scrollbars */
+.mavi-scroll::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.mavi-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.mavi-scroll::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.25);
+  border-radius: 9999px;
+}
+
+.dark .mavi-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.28);
+}
+
+/* Markdown prose polish */
+.mavi-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.mavi-prose th,
+.mavi-prose td {
+  padding: 0.55rem 0.75rem;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+  text-align: left;
+}
+
+.mavi-prose th {
+  font-weight: 600;
+  font-size: 0.8125rem;
+}
